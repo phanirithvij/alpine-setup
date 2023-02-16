@@ -2,7 +2,9 @@
 set fish_trace 1
 doas apk add neofetch
 neofetch
+
 # TODO ansible playbook with molecule tests
+# TODO dotfiles (yadm, chezmoi, stow, dotbot, some new tui)
 
 # change user shell to fish
 doas apk add shadow

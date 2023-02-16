@@ -1,0 +1,29 @@
+- jrnl, logseq tui (charmbracelet markdown and slides presentation)
+- visual ansible graphs (web&/tui)
+  - include dependencis
+     - git repos (sources bitbucket/github/gitlab etc)
+        - proper archival for each source, issues, discussions, forums, prs, ci logs and releases (airgap/vendoring)
+          - existing: archivebox, webarchive, waybackrc
+     - package dependencies for npm, yarn, pnpm, etc. (visualize: web/tui, airgap/vendoring sources and binaries)
+- core-js, leftpad shenanigans prevention (visualize donations, sponsors, web&/tui)
+- topgrade like dotfile manager ?
+  - yadm, chezmoi, stow, dotbot
+  - stow with tui?
+  - scoop,choco,winget tui (*winget-gui)
+  - crossplatform, rust/go?
+- dependency manager tui for npm, etc (sysz style maybe)
+- k9s/lazygit/lazydocker style everything
+  - integrating everything (one entrypoint) (existing: nvim modals/lazygit custom commands/lf prompt commands)
+- similar grouped graphs
+- fly-pie cross platform with joystick support
+- antimicox tui with tests visualized (maybe just launch existing sdl2_test at the beginning)
+	- detect and run
+	- visual feedback in the polybar/dock/toolbar
+- wallpaper manager tui
+	- add sources/smart subscribe site user endpoints/subscribe rss
+- egui web (wasm)?
+	- egui joystick
+	- egui tui?
+- archivebox tui
+	- archivebox-replacement tui
+	- existing: nvim mason style downloads
