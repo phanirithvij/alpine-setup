@@ -2,6 +2,7 @@
 	- logseq tui (#extend, #invstg)
 	- jrnl tui (#extend)
 	- logseq-jrnl-replcr (#replcr)
+	- https://github.com/QWxleA/ulauncher-logseq
 - visual ansible graphs (web&/tui) (#extend, #invstg)
   - include dependencis
      - git repos (sources bitbucket/github/gitlab etc)
