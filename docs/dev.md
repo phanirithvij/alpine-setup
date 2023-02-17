@@ -34,8 +34,6 @@ So need to do a setup-xorg-base and select xorg manually to get xorg
 
 Alt+F2 and r says reloading not supported in Wayland so xorg is required
 
-- [ ] https://github.com/Nukesor/pueue (pueue-tui, harpoon-tui combined)
-
 usermod docs can be installed with `apk add shadow-doc man-pages mandoc`
 https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comment2542998_1395473
 
@@ -50,3 +48,18 @@ https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comm
 - https://wiki.archlinux.org/title/GDM
 	- https://unix.stackexchange.com/questions/248705/how-do-i-install-gresource-on-fedora
 	- https://pkgs.alpinelinux.org/package/edge/main/x86/glib-dev
+
+- https://www.youtube.com/watch?v=WlPR2297bsI
+	- got pipewire working in alpine along with kde plasma with xorg
+	- for me I guess wayland is fine with gnome if it runs this fast like in a live usb
+		- Guess If I can replicate this setup automagically with ansible or something
+		  there's no need to permainstall one to disk (do it but for a last resort)
+	- Really need to get awesome working along side gnome (gdm should have awesome option)
+- yt://DM2-5C2SOL0
+	- lbu commit style workflow with vms
+	- maybe install debian or something with gnome and use vms instead of liveusb? #invstg
+- https://pkgs.alpinelinux.org/packages?name=pulseaudio-bluez&branch=edge&repo=&arch=x86_64&maintainer=
+- https://wiki.alpinelinux.org/wiki/PipeWire
+- https://wiki.alpinelinux.org/wiki/Setting_up_Logical_Volumes_with_LVM
+- https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts#setup-disk
+

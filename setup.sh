@@ -41,6 +41,7 @@ neofetch | tee ~/neofetch-fresh.log
 # fish basic config
 # change user shell to fish
 apk add shadow
+apk add mandoc man-pages shadow-doc
 chsh -s (which fish)
 su z -c "chsh -s $(which fish) && exit"
 apk del shadow
@@ -53,13 +54,14 @@ setup-desktop gnome
 
 apk add git tmux lf micro lazygit
 apk add bat fzf btop htop
+apk add ntfs-3g
 
 # Add fly-pie
 apk add curl file xdg-utils xclip doas
 curl -L -O -J https://github.com/Schneegans/Fly-Pie/releases/latest/download/flypie@schneegans.github.com.zip
 doas -u z gnome-extensions install flypie@schneegans.github.com.zip
 rm flypie@schneegans.github.com.zip
-# TODO move this to after gnome starts,
+# TODO move this to a script that needs to be run after gnome starts
 doas -u z gnome-extensions enable flypie@schneegans.github.com
 xdg-mime default firefox.desktop text/html
 

@@ -70,6 +70,7 @@
 - better bukuserver (#extend)
 - vault-tui (#extend)
 	- gnome-keyring-tui (#extend)
+- https://github.com/Nukesor/pueue (pueue-tui, harpoon-tui combined, #insp, #new)
 
 ## Legend
 
