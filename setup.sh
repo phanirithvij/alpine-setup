@@ -1,12 +1,41 @@
 #!/usr/bin/env fish
-set fish_trace 1
-apk add neofetch
-neofetch | tee ~/neofetch-fresh.log
 
 # TODO ansible playbook with molecule tests
 # TODO dotfiles (yadm, chezmoi, stow, dotbot, some new tui)
 # TODO nix config ?
 # TODO micro settings, lfrc, etc.
+
+set fish_trace 1
+setup-apkrepos
+sed -E -ibak '1,/community/{s/^#(.*\/community)$/\1/}' /etc/apk/repositories
+
+if ! test -e setup-alpine.conf
+    echo "
+    KEYMAPOPTS=\"us us\"
+    HOSTNAMEOPTS=a
+    DEVDOPTS=mdev
+    INTERFACESOPTS=\"auto lo
+    iface lo inet loopback
+
+    auto wlan0
+    iface wlan0 inet dhcp
+    \"
+    TIMEZONEOPTS=\"Asia/Kolkata\"
+    PROXYOPTS=none
+    APKREPOSOPTS=\"-1\"
+    # Create admin user
+    USEROPTS=\"-a -u -g audio,video,netdev z\"
+    SSHDOPTS=openssh
+    NTPOPTS=\"busybox\"
+    DISKOPTS=none
+    LBUOPTS=none
+    APKCACHEOPTS=none
+    " > setup-alpine.conf
+end
+setup-alpine -f setup-alpine.conf
+
+apk add neofetch
+neofetch | tee ~/neofetch-fresh.log
 
 # fish basic config
 # change user shell to fish
