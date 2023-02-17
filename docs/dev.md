@@ -69,3 +69,6 @@ https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comm
 	- https://askubuntu.com/a/76747 (did not work with alacritty)
 	- found it via `apk info -a gnome-console` it was named `kgx` (man page from https://www.mankier.com/8/apk-info)
 
+- termux ssh password can be set for the first time using `passwd`
+	- It is the password I usually use nnntnuuu
+- https://wiki.alpinelinux.org/wiki/Fonts
