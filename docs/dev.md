@@ -63,3 +63,7 @@ https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comm
 - https://wiki.alpinelinux.org/wiki/Setting_up_Logical_Volumes_with_LVM
 - https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts#setup-disk
 
+- https://askubuntu.com/questions/76712/setting-nautilus-open-terminal-to-launch-terminator-rather-than-gnome-terminal/294430#294430
+	- gnome with alpine doesn't come with gnome-terminal but gnome-console which is not available from the cli
+	- few command line application installed via apk like fish, micro, btop++ have gnome app entries, they open only after installing gnome-terminal
+	- https://askubuntu.com/a/76747 (did not work with alacritty)
