@@ -24,7 +24,7 @@ TIMEZONEOPTS=\"Asia/Kolkata\"
 PROXYOPTS=none
 APKREPOSOPTS=\"https://dl-cdn.alpinelinux.org/alpine/v3.17/main
 https://dl-cdn.alpinelinux.org/alpine/v3.17/community\"
-USEROPTS=\"-a -u -g audio,video,netdev,input z -s /usr/bin/fish\"
+USEROPTS=\"-a -u -f z -g audio,video,netdev,input z\"
 SSHDOPTS=openssh
 NTPOPTS=\"busybox\"
 DISKOPTS=none
@@ -33,6 +33,7 @@ APKCACHEOPTS=none\
 " > setup-alpine.conf
 end
 setup-alpine -f setup-alpine.conf
+passwd z
 
 apk add neofetch
 neofetch | tee ~/neofetch-fresh.log
