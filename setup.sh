@@ -10,7 +10,7 @@ setup-apkrepos
 sed -E -ibak '1,/community/{s/^#(.*\/community)$/\1/}' /etc/apk/repositories
 
 if ! test -e setup-alpine.conf
-echo "
+echo "\
 KEYMAPOPTS=\"us us\"
 HOSTNAMEOPTS=a
 DEVDOPTS=mdev
@@ -22,13 +22,14 @@ iface wlan0 inet dhcp
 \"
 TIMEZONEOPTS=\"Asia/Kolkata\"
 PROXYOPTS=none
-APKREPOSOPTS=\"-1\"
-USEROPTS=\"-a -u -g audio,video,netdev,input z\"
+APKREPOSOPTS=\"https://dl-cdn.alpinelinux.org/alpine/v3.17/main
+https://dl-cdn.alpinelinux.org/alpine/v3.17/community\"
+USEROPTS=\"-a -u -g audio,video,netdev,input z -s /usr/bin/fish\"
 SSHDOPTS=openssh
 NTPOPTS=\"busybox\"
 DISKOPTS=none
 LBUOPTS=none
-APKCACHEOPTS=none
+APKCACHEOPTS=none\
 " > setup-alpine.conf
 end
 setup-alpine -f setup-alpine.conf
@@ -53,7 +54,7 @@ apk add git tmux lf micro lazygit
 apk add bat fzf btop htop
 
 # Add fly-pie
-apk add curl file xdg-utils xclip
+apk add curl file xdg-utils xclip doas
 curl -L -O -J https://github.com/Schneegans/Fly-Pie/releases/latest/download/flypie@schneegans.github.com.zip
 doas -u z gnome-extensions install flypie@schneegans.github.com.zip
 rm flypie@schneegans.github.com.zip

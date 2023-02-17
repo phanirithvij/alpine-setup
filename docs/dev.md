@@ -33,3 +33,20 @@ So need to do a setup-xorg-base and select xorg manually to get xorg
 `https://askubuntu.com/questions/100226/how-to-restart-gnome-shell-from-command-line?answertab=modifieddesc#tab-top`
 
 Alt+F2 and r says reloading not supported in Wayland so xorg is required
+
+- [ ] https://github.com/Nukesor/pueue (pueue-tui, harpoon-tui combined)
+
+usermod docs can be installed with `apk add shadow-doc man-pages mandoc`
+https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comment2542998_1395473
+
+- https://sourcegraph.com/github.com/chriswayg/packer-proxmox-templates/-/blob/alpine-3-amd64-proxmox/http/answers?subtree=true
+- ntfs fstab
+	- https://phoenixnap.com/kb/mount-ntfs-linux
+	- https://wiki.archlinux.org/title/NTFS-3G
+- https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1705
+- https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1698
+- https://github.com/kramergroup/vnc-alpine/blob/master/Dockerfile
+- https://wiki.alpinelinux.org/wiki/AwesomeWM
+- https://wiki.archlinux.org/title/GDM
+	- https://unix.stackexchange.com/questions/248705/how-do-i-install-gresource-on-fedora
+	- https://pkgs.alpinelinux.org/package/edge/main/x86/glib-dev
