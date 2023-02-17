@@ -68,6 +68,7 @@ https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comm
 	- few command line application installed via apk like fish, micro, btop++ have gnome app entries, they open only after installing gnome-terminal
 	- https://askubuntu.com/a/76747 (did not work with alacritty)
 	- found it via `apk info -a gnome-console` it was named `kgx` (man page from https://www.mankier.com/8/apk-info)
+	- so the solution was to `ln -s /usr/bin/kgx /usr/bin/gnome-terminal`
 
 - termux ssh password can be set for the first time using `passwd`
 	- It is the password I usually use nnntnuuu
