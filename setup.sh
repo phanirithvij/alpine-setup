@@ -10,27 +10,26 @@ setup-apkrepos
 sed -E -ibak '1,/community/{s/^#(.*\/community)$/\1/}' /etc/apk/repositories
 
 if ! test -e setup-alpine.conf
-    echo "
-    KEYMAPOPTS=\"us us\"
-    HOSTNAMEOPTS=a
-    DEVDOPTS=mdev
-    INTERFACESOPTS=\"auto lo
-    iface lo inet loopback
+echo "
+KEYMAPOPTS=\"us us\"
+HOSTNAMEOPTS=a
+DEVDOPTS=mdev
+INTERFACESOPTS=\"auto lo
+iface lo inet loopback
 
-    auto wlan0
-    iface wlan0 inet dhcp
-    \"
-    TIMEZONEOPTS=\"Asia/Kolkata\"
-    PROXYOPTS=none
-    APKREPOSOPTS=\"-1\"
-    # Create admin user
-    USEROPTS=\"-a -u -g audio,video,netdev z\"
-    SSHDOPTS=openssh
-    NTPOPTS=\"busybox\"
-    DISKOPTS=none
-    LBUOPTS=none
-    APKCACHEOPTS=none
-    " > setup-alpine.conf
+auto wlan0
+iface wlan0 inet dhcp
+\"
+TIMEZONEOPTS=\"Asia/Kolkata\"
+PROXYOPTS=none
+APKREPOSOPTS=\"-1\"
+USEROPTS=\"-a -u -g audio,video,netdev,input z\"
+SSHDOPTS=openssh
+NTPOPTS=\"busybox\"
+DISKOPTS=none
+LBUOPTS=none
+APKCACHEOPTS=none
+" > setup-alpine.conf
 end
 setup-alpine -f setup-alpine.conf
 
@@ -56,10 +55,11 @@ apk add bat fzf btop htop
 # Add fly-pie
 apk add curl file xdg-utils xclip
 curl -L -O -J https://github.com/Schneegans/Fly-Pie/releases/latest/download/flypie@schneegans.github.com.zip
-gnome-extensions install flypie@schneegans.github.com.zip
+doas -u z gnome-extensions install flypie@schneegans.github.com.zip
 rm flypie@schneegans.github.com.zip
-gnome-extensions enable flypie@schneegans.github.com
+# TODO move this to after gnome starts,
+doas -u z gnome-extensions enable flypie@schneegans.github.com
 xdg-mime default firefox.desktop text/html
 
 neofetch | tee ~/neofetch-gnome.log
-#openrc default
+echo "Run 'openrc default' to switch to desktop"
