@@ -1,3 +1,18 @@
+- optional lua embed config for all things I build
+  - try to find a golua and rustlua that work without any compatablity issues and code so that they can build fine with or without lua support
+- gitbarefs (A git bare fuse fs
+  - Thought of it when trying to clone https://gitlab.com/thelinuxcast/wallpapers with only 7GB diskspace available
+    - repo size is 7GB, should fit in the disk but no because worktree will need additional space
+    - can download the repo source code in zip/tar formats but it's not a git repo anymore is it.
+  - Can be useful when low on storage space or for working with very large repos
+  - .git has all the files inside anyway, why should the checkedout worktree take up double the space.
+  - allow single commit cloning (pure shallow clones)
+    - https://stackoverflow.com/questions/31278902/how-to-shallow-clone-a-specific-commit-with-depth-1
+  - maybe #extend upon gix (gitoxide)?
+  - existing things
+    - https://github.com/creationix/gitfuse (experimental, readonly, js, yuck, has a good amount of features)
+    - https://github.com/anupcshan/fusegit (experimental, go, incomplete)
+    - https://github.com/presslabs/gitfs (python, kind of related but not, every filesystem operation is commited)
 - jrnl, logseq tui (charmbracelet markdown and slides presentation)
 	- logseq tui (#extend, #invstg)
 	- jrnl tui (#extend)
