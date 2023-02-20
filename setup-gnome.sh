@@ -1,5 +1,10 @@
 #!/usr/bin/env fish
 
+# TODO ansible playbook with molecule tests
+# TODO dotfiles (yadm, chezmoi, stow, dotbot, some new tui)
+# TODO nix config ?
+# TODO micro settings, lfrc, etc.
+
 set fish_trace 1
 setup-apkrepos
 sed -E -ibak '1,/community/{s/^#(.*\/community)$/\1/}' /etc/apk/repositories
@@ -45,7 +50,7 @@ set -Ux EDITOR micro
 set -U fish_greeting ""
 
 # TODO setup awesome
-setup-desktop awesome lua ly
+setup-desktop gnome
 
 apk add git tmux lf micro lazygit
 apk add bat fzf btop htop
@@ -53,6 +58,11 @@ apk add ntfs-3g
 
 # Add fly-pie
 apk add curl file xdg-utils xclip doas
+curl -L -O -J https://github.com/Schneegans/Fly-Pie/releases/latest/download/flypie@schneegans.github.com.zip
+doas -u z gnome-extensions install flypie@schneegans.github.com.zip
+rm flypie@schneegans.github.com.zip
+# TODO move this to a script that needs to be run after gnome starts
+doas -u z gnome-extensions enable flypie@schneegans.github.com
 xdg-mime default firefox.desktop text/html
 
 neofetch | tee ~/neofetch-gnome.log
