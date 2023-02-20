@@ -1,7 +1,6 @@
 #!/usr/bin/env fish
 
 set fish_trace 1
-setup-apkrepos
 sed -E -ibak '1,/community/{s/^#(.*\/community)$/\1/}' /etc/apk/repositories
 
 if ! test -e setup-alpine.conf
@@ -45,15 +44,19 @@ set -Ux EDITOR micro
 set -U fish_greeting ""
 
 # TODO setup awesome
-setup-desktop awesome lua ly
+apk add awesome lua terminus-font alacritty sddm
+rc-update add sddm
 
+apk add firefox xinput xclip xsel
 apk add git tmux lf micro lazygit
 apk add bat fzf btop htop
 apk add ntfs-3g
 
 # Add fly-pie
-apk add curl file xdg-utils xclip doas
+apk add curl file xdg-utils doas
 xdg-mime default firefox.desktop text/html
+
+# xinput set-prop "$(xinput list --name-only | grep -i touch)" "libinput Tapping Enabled" 1
 
 neofetch | tee ~/neofetch-gnome.log
 echo "Run 'openrc default' to switch to desktop"
