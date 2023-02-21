@@ -80,7 +80,17 @@ chmod +x ~/.xinitrc
 apk add firefox xinput xclip xsel
 apk add git tmux lf micro lazygit
 apk add bat fzf btop htop
-apk add ntfs-3g
+apk add ntfs-3g lsblk
+
+# lsblk -f
+# fdisk -l
+# findmnt
+
+mkdir /media/{OS,Storage,root,home}
+mount -t ntfs-3g /dev/sdb3 /media/OS
+mount -t ntfs-3g /dev/sda2 /media/Storage
+mount /dev/sda3 /media/root
+mount /dev/sda4 /media/home
 
 apk add curl file xdg-utils doas
 xdg-mime default firefox.desktop text/html
