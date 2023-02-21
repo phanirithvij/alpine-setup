@@ -1,6 +1,7 @@
 #!/usr/bin/env fish
 
 set fish_trace 1
+# set -e fish_trace
 sed -E -ibak '1,/community/{s/^#(.*\/community)$/\1/}' /etc/apk/repositories
 
 if ! test -e setup-alpine.conf
@@ -52,7 +53,7 @@ cd ly
 make
 make install
 make installopenrc
-rc-update add ly default
+rc-update add ly-openrc default
 cd ..
 
 apk add firefox xinput xclip xsel

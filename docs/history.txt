@@ -1,0 +1,120 @@
+history
+history merge
+exit
+ls
+dust
+rm -rf .git
+apk add dust
+cd wallpapers/
+htop
+gnome-disk-image-mounter
+gnome-disks
+apk add gnome-disk-utility
+git clone --depth=1 https://github.com/makccr/wallpapers
+git clone --depth=1 https://gitlab.gnome.org/GNOME/gnome-backgrounds
+git clone https://gitlab.gnome.org/GNOME/gnome-backgrounds
+compton & disown; alacritty & disown; exit
+nitrogen & disown; alacritty & disown ;exit
+killall nitrogen
+nitrogen & disown; alacritty &disown ;exit
+nitrogen
+nix-env -iA nixpkgs.nitrogen
+apk add nitrogen
+lf
+compton &
+apk add compton
+lf ~/.config/alacritty.yml
+lf ~/
+LANG=en_US.UTF-8 btop
+echo $LANG
+btop
+btop --utf-force
+fish_add_path ~/.nix-profile/bin/
+lf ~/.nix-profile/bin/
+which btop
+apk del btop
+nix-env -iA nixpkgs.btop
+rmdir /nix/var/nix/profiles/default/
+rm /nix/var/nix/profiles/default/
+nix
+nix-collect-garbage
+nix profile
+lf /nix/var/nix/
+firefox & disown; exit
+top
+nix-channel --update
+lf ~/.nix-channels
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+nix-channel --list
+nix-env -i btop
+nix-env
+apk add nix
+vim /etc/apk/repositories
+setup-apkrepos
+setup-apk
+lf ~/.config/
+cd dotfiles-yadm
+git clone --recursive  https://github.com/phanirithvij/dotfiles-yadm x
+git clone --recursive  https://github.com/phanirithvij/dotfiles-yadmx
+git clone --recursive  https://github.com/phanirithvij/dotfiles-yadm
+cd ..
+echo 'awesome.restart()' | awesome-client
+git clone https://github.com/troglobit/awesome-switcher .config/awesome/awesome-switcher
+cat .gitmodules
+git submodule init
+lf .config/mpv/scripts/mpv_sponsorblock/
+git submodule update --init
+git submodule update --init awesome-switcher
+git submodule update --init awesome-switch
+git submodule update --init --recursive
+cd dotfiles-yadm/
+git clone https://github.com/phanirithvij/dotfiles-yadm
+apk del xterm
+startx
+vim ~/.xinitrc
+ls -l ~/.xinitrc
+ls ~/.xinitrc
+ly
+tty
+killall ly
+rc-service ly-openrc stop
+rc-service ly-openrc stoo
+rc-service ly-openrc sto
+killall startx lf
+killall  lf
+killall startx
+killall X
+killall awesome
+sddm
+rc-update add sddm
+rc-update del ly-openrc
+apk add sddm
+lf /usr/share/xsessions/
+lf /etc/X11/
+micro ~/.config/
+chmod +x .xinitrc
+vim .xinitrc
+cat /var/log/Xorg.0.log | less
+cat /var/log/Xorg.0.log
+l
+startx gnome
+startx ly
+startx awesome
+apk add xterm
+which awesome
+ls -l /dev/tty1
+ls -l /dev/tty2
+chown root /dev/tty2
+pwd
+openrc default
+openrc sysinit
+lf /etc/ly/config.ini
+cd
+chown z /dev/tty2
+setup-xorg-base
+which openrc
+source setup.sh
+vim setup.sh
+cd alpine-setup/
+git clone https://github.com/phanirithvij/alpine-setup
