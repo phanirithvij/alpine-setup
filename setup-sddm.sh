@@ -1,7 +1,6 @@
 #!/usr/bin/env fish
 
 set fish_trace 1
-# set -e fish_trace
 sed -E -ibak '1,/community/{s/^#(.*\/community)$/\1/}' /etc/apk/repositories
 
 if ! test -e setup-alpine.conf
@@ -17,9 +16,8 @@ iface wlan0 inet dhcp
 \"
 TIMEZONEOPTS=\"Asia/Kolkata\"
 PROXYOPTS=none
-APKREPOSOPTS=\"https://dl-cdn.alpinelinux.org/alpine/edge/main
-https://dl-cdn.alpinelinux.org/alpine/edge/community
-https://dl-cdn.alpinelinux.org/alpine/edge/testing\"
+APKREPOSOPTS=\"https://dl-cdn.alpinelinux.org/alpine/v3.17/main
+https://dl-cdn.alpinelinux.org/alpine/v3.17/community\"
 USEROPTS=\"-a -u -f z -g audio,video,netdev,input z\"
 SSHDOPTS=openssh
 NTPOPTS=\"busybox\"
@@ -45,42 +43,14 @@ su z -c "set -Ux EDITOR micro; set -U fish_greeting ''"
 set -Ux EDITOR micro
 set -U fish_greeting ""
 
-# TODO setup awesome with ly
-apk add awesome lua terminus-font alacritty #sddm
-#rc-update add sddm
-apk add libxcb-dev linux-headers musl-dev gcc linux-pam-dev make git
-git clone --recurse-submodules https://github.com/phanirithvij/ly
-cd ly
-make
-make install
-make installopenrc
-#rc-update add ly-openrc default
-cd ..
-
-apk add yadm
-yadm clone --bootstrap https://github.com/phanirithvij/dofiles-yadm
-
-apk add nix
-# nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-nix-channel --update
-nix-env -iA nixpkgs.nitrogen
-fish_add_path ~/.nix-profile/bin
-
-apk add compton
-echo "\
-#!/bin/sh
-nitrogen &
-compton &
-exec awesome
-" > ~/.xinitrc
-chmod +x ~/.xinitrc
+apk add awesome lua terminus-font alacritty sddm
+rc-update add sddm
 
 apk add firefox xinput xclip xsel
 apk add git tmux lf micro lazygit
 apk add bat fzf btop htop
 apk add ntfs-3g
 
-# Add fly-pie
 apk add curl file xdg-utils doas
 xdg-mime default firefox.desktop text/html
 
