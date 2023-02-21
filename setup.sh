@@ -64,6 +64,8 @@ yadm clone --bootstrap https://github.com/phanirithvij/dotfiles-yadm
 apk add nix
 # nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 nix-channel --update
+# bug
+rmdir /nix/var/nix/profiles/default
 nix-env -iA nixpkgs.nitrogen
 fish_add_path ~/.nix-profile/bin
 
