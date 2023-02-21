@@ -46,6 +46,7 @@ set -Ux EDITOR micro
 set -U fish_greeting ""
 
 # TODO setup awesome with ly
+setup-xorg-base
 apk add awesome lua terminus-font alacritty #sddm
 #rc-update add sddm
 apk add libxcb-dev linux-headers musl-dev gcc linux-pam-dev make git
@@ -58,7 +59,7 @@ make installopenrc
 cd ..
 
 apk add yadm
-yadm clone --bootstrap https://github.com/phanirithvij/dofiles-yadm
+yadm clone --bootstrap https://github.com/phanirithvij/dotfiles-yadm
 
 apk add nix
 # nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
@@ -87,4 +88,5 @@ xdg-mime default firefox.desktop text/html
 # xinput set-prop "$(xinput list --name-only | grep -i touch)" "libinput Tapping Enabled" 1
 
 neofetch | tee ~/neofetch-gnome.log
-echo "Run 'openrc default' to switch to desktop"
+#echo "Run 'openrc default' to switch to desktop"
+echo "Run startx to start awesome"
