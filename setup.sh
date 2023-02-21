@@ -43,9 +43,17 @@ su z -c "set -Ux EDITOR micro; set -U fish_greeting ''"
 set -Ux EDITOR micro
 set -U fish_greeting ""
 
-# TODO setup awesome
-apk add awesome lua terminus-font alacritty sddm
-rc-update add sddm
+# TODO setup awesome with ly
+apk add awesome lua terminus-font alacritty #sddm
+#rc-update add sddm
+apk add libxcb-dev linux-headers musl-dev gcc linux-pam-dev make git
+git clone --recurse-submodules https://github.com/phanirithvij/ly
+cd ly
+make
+make install
+make installopenrc
+rc-update add ly default
+cd ..
 
 apk add firefox xinput xclip xsel
 apk add git tmux lf micro lazygit
