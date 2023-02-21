@@ -47,8 +47,7 @@ set -U fish_greeting ""
 
 # TODO setup awesome with ly
 setup-xorg-base
-apk add awesome lua terminus-font alacritty #sddm
-#rc-update add sddm
+apk add awesome lua terminus-font alacritty
 apk add libxcb-dev linux-headers musl-dev gcc linux-pam-dev make git
 git clone --recurse-submodules https://github.com/phanirithvij/ly
 cd ly
@@ -83,9 +82,11 @@ apk add git tmux lf micro lazygit
 apk add bat fzf btop htop
 apk add ntfs-3g
 
-# Add fly-pie
 apk add curl file xdg-utils doas
 xdg-mime default firefox.desktop text/html
+
+# reomve the beep sound
+xset -b
 
 # xinput set-prop "$(xinput list --name-only | grep -i touch)" "libinput Tapping Enabled" 1
 
