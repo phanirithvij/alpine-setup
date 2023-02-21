@@ -78,19 +78,23 @@ exec awesome
 chmod +x ~/.xinitrc
 
 apk add firefox xinput xclip xsel
-apk add git tmux lf micro lazygit
-apk add bat fzf btop htop
-apk add ntfs-3g lsblk
+apk add git tmux lf micro lazygit bat fzf btop htop
 
 # lsblk -f
 # fdisk -l
 # findmnt
 
+apk add ntfs-3g lsblk
 mkdir /media/{OS,Storage,root,home}
 mount -t ntfs-3g /dev/sdb3 /media/OS
 mount -t ntfs-3g /dev/sda2 /media/Storage
 mount /dev/sda3 /media/root
 mount /dev/sda4 /media/home
+
+# git creds
+cp /media/home/rithviz/.netrc ~/
+git config --global user.name phanirithvij
+git config --global user.email phanirithvij2000@gmail.com
 
 apk add curl file xdg-utils doas
 xdg-mime default firefox.desktop text/html
