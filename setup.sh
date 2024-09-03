@@ -48,13 +48,11 @@ set -U fish_greeting ""
 # TODO setup awesome with ly
 setup-xorg-base
 apk add awesome lua terminus-font alacritty
-apk add libxcb-dev linux-headers musl-dev gcc linux-pam-dev make git
-git clone --recurse-submodules https://github.com/phanirithvij/ly
+apk add zig
+git clone https://github.com/fairyglade/ly
 cd ly
-make
-make install
-make installopenrc
-#rc-update add ly-openrc default
+zig build installopenrc
+rc-update add ly #default
 cd ..
 
 apk add yadm
