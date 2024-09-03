@@ -81,3 +81,25 @@ https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comm
 - related
     - https://gitlab.alpinelinux.org/alpine/aports/-/issues/15665
     - https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/community/phpspy/APKBUILD
+
+- alpine linux-firmware package split
+- https://lists.alpinelinux.org/~alpine/devel/%3C4d19a51c-3eba-9775-0208-4d87da66effc%40bitmessage.ch%3E
+- https://wiki.alpinelinux.org/wiki/Kernels
+- https://forums.debian.net/viewtopic.php?t=151146 (related maybe)
+- get a slim bare metal config, with internet working
+
+- also custom-iso scripts
+    - https://wiki.alpinelinux.org/wiki/How_to_make_a_custom_ISO_image
+    - https://wiki.alpinelinux.org/wiki/How_to_make_a_custom_ISO_image_with_mkimage
+    - https://gitlab.com/tearch-linux/applications-and-tools/teaiso
+    - https://gitlab.com/venenux/venenux-teaiso
+- goal is to get a nix baked alpine setup working on boot (bm and vm)
+    - bm
+    - one as a rescue drive
+        - extremly minimal for now only nixos-install-tools (i.e nixos-enter)
+        - and internet access (both eth0 and wlan0)
+    - other as a daily driver without nixos but with nix?
+        - sensible?
+    - vm is easy
+        - docker (apk add nix; nix conf flakes; nix profile ...)
+        - vagrant (hmmm)
