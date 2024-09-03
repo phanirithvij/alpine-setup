@@ -73,3 +73,11 @@ https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comm
 - termux ssh password can be set for the first time using `passwd`
 	- It is the password I usually use nnntnuuu
 - https://wiki.alpinelinux.org/wiki/Fonts
+
+- ly was rewritten in zig
+- alpine has ly package but it is not updated to the zig version
+    - https://gitlab.alpinelinux.org/alpine/aports/-/issues/16272
+    - https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/community/ly/APKBUILD
+- related
+    - https://gitlab.alpinelinux.org/alpine/aports/-/issues/15665
+    - https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/community/phpspy/APKBUILD
