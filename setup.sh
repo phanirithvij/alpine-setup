@@ -51,6 +51,7 @@ apk add awesome lua terminus-font alacritty
 apk add zig
 git clone https://github.com/fairyglade/ly
 cd ly
+apk add libxcb-dev linux-headers musl-dev gcc linux-pam-dev make git
 zig build installopenrc
 rc-update add ly #default
 cd ..
