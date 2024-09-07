@@ -103,3 +103,8 @@ https://superuser.com/questions/1395473/usermod-equivalent-for-alpine-linux#comm
     - vm is easy
         - docker (apk add nix; nix conf flakes; nix profile ...)
         - vagrant (hmmm)
+- above idea is useless since nixos-enter and inside that chroot 
+  nix daemon service works only with nixos iso (didn't work with alpine or arch)
+- https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/scripts/mkimg.standard.sh?ref_type=heads
+- https://stackoverflow.com/questions/55324152/create-alpine-linux-iso-from-docker-libburn-permission-denied
+- https://www.skreutz.com/posts/unattended-installation-of-alpine-linux/
