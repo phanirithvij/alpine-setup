@@ -81,7 +81,13 @@ exec awesome
 chmod +x ~/.xinitrc
 
 apk add firefox xinput xclip xsel
-apk add git tmux lf micro lazygit bat fzf btop htop gh duf gdu polkit-common
+apk add git tmux lf micro lazygit bat fzf btop htop gh duf gdu ripgrep
+
+apk add dbus dbus-x11
+rc-service dbus start
+
+apk add polkit-elogind polkit-common
+rc-service polkit start
 
 # lsblk -f
 # fdisk -l
