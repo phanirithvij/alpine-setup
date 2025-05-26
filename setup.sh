@@ -12,6 +12,9 @@ DEVDOPTS=mdev
 INTERFACESOPTS=\"auto lo
 iface lo inet loopback
 
+auto usb0
+iface usb0 inet dhcp
+
 auto wlan0
 iface wlan0 inet dhcp
 \"
@@ -57,7 +60,7 @@ rc-update add ly #default
 cd ..
 
 apk add yadm
-yadm clone --bootstrap https://github.com/phanirithvij/dotfiles-yadm
+# yadm clone --bootstrap https://github.com/phanirithvij/dotfiles-yadm
 
 apk add nix
 # nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
@@ -72,12 +75,13 @@ echo "\
 #!/bin/sh
 nitrogen &
 compton &
+xinput set-prop \"$(xinput list --name-only | grep -i touch)\" \"libinput Tapping Enabled\" 1
 exec awesome
 " > ~/.xinitrc
 chmod +x ~/.xinitrc
 
 apk add firefox xinput xclip xsel
-apk add git tmux lf micro lazygit bat fzf btop htop
+apk add git tmux lf micro lazygit bat fzf btop htop gh duf gdu polkit-common
 
 # lsblk -f
 # fdisk -l
